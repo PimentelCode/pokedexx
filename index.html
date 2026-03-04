@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pokédex - Explore o mundo Pokémon</title>
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Varela+Round&display=swap" rel="stylesheet">
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/variables.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/modal.css">
+    <link rel="stylesheet" href="css/animations.css">
+</head>
+<body>
+    <div class="background-container">
+        <!-- Bubbles/Clouds created via CSS -->
+        <div class="bubble bubble-1"></div>
+        <div class="bubble bubble-2"></div>
+        <div class="bubble bubble-3"></div>
+        <div class="bubble bubble-4"></div>
+        <div class="deco-pokeball-left"></div>
+        <div class="deco-pokeball-right"></div>
+    </div>
+
+    <header class="main-header">
+        <div class="logo-container">
+            <div class="pokeball-icon">
+                <div class="pokeball-icon-red"></div>
+            </div>
+            <h1>Pokedex</h1>
+        </div>
+        
+        <nav class="main-nav">
+            <ul>
+                <li><a href="#" class="nav-link active">Pokedex</a></li>
+                <li><a href="#" class="nav-link">News</a></li>
+                <li><a href="#" class="nav-link">About us</a></li>
+                <li><a href="#" class="nav-link">Community</a></li>
+            </ul>
+        </nav>
+        
+        <div class="user-profile">
+            <div class="user-icon-head-green"></div>
+            <div class="user-icon-head-blue"></div>
+            <div class="user-profile-shine"></div>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero-section">
+            <div class="glass-card">
+                <div class="hero-content">
+                    <h2>Explore o mundo<br><span>Pokemon!</span></h2>
+                    <p>Descubra todos os Pokemons<br>com sua Pokedex digital:</p>
+                    <button class="btn-cta">COMECE AGORA</button>
+                </div>
+                
+                <div class="hero-visuals">
+                    <!-- Pokedex Device & Pokemon Images -->
+                    <div class="pokedex-device">
+                        <div class="pokedex-sensor"></div>
+                        <div class="pokedex-lights">
+                            <div class="light red"></div>
+                            <div class="light yellow"></div>
+                            <div class="light green"></div>
+                        </div>
+                        <div class="pokedex-controls">
+                            <div class="action-btn"></div>
+                            <div class="d-pad"></div>
+                        </div>
+                    </div>
+                    <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/25.png" alt="Pikachu" class="hero-pokemon pikachu">
+                    <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/4.png" alt="Charmander" class="hero-pokemon charmander">
+                    <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/7.png" alt="Squirtle" class="hero-pokemon squirtle">
+                </div>
+            </div>
+        </section>
+
+        <section class="featured-section">
+            <h3>Pokemons em destaque:</h3>
+            <div class="featured-carousel" id="featured-pokemon-container">
+                <!-- Javascript will populate this -->
+            </div>
+            
+            <button class="carousel-nav prev">‹</button>
+            <button class="carousel-nav next">›</button>
+        </section>
+    </main>
+
+    <!-- Modal Template -->
+    <div id="pokemon-modal" class="modal hidden">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <div id="modal-body"></div>
+        </div>
+    </div>
+
+    <script type="module" src="js/main.js"></script>
+</body>
+</html>

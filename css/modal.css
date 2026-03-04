@@ -1,0 +1,98 @@
+/* Modal Styles */
+.modal-header {
+    text-align: center;
+    padding: 20px;
+    border-radius: var(--border-radius-lg) var(--border-radius-lg) 0 0;
+    color: white;
+}
+
+.modal-header img {
+    width: 150px;
+    height: 150px;
+    margin: 0 auto;
+    filter: drop-shadow(0 5px 10px rgba(0,0,0,0.2));
+}
+
+.modal-header h2 {
+    font-size: 2rem;
+    margin: 10px 0;
+    text-shadow: 0 2px 4px rgba(0,0,0,0.2);
+}
+
+.modal-details {
+    padding: 20px;
+}
+
+.stats-container {
+    margin-bottom: 20px;
+}
+
+.stats-container h3 {
+    margin-bottom: 10px;
+    font-size: 1.2rem;
+    color: #333;
+}
+
+.stat-row {
+    display: flex;
+    align-items: center;
+    margin-bottom: 8px;
+    font-size: 0.9rem;
+}
+
+.stat-name {
+    width: 100px;
+    text-transform: capitalize;
+    color: #666;
+}
+
+.stat-bar-bg {
+    flex: 1;
+    height: 10px;
+    background: #eee;
+    border-radius: 5px;
+    margin: 0 10px;
+    overflow: hidden;
+}
+
+.stat-bar-fill {
+    height: 100%;
+    border-radius: 5px;
+}
+
+.stat-value {
+    width: 30px;
+    text-align: right;
+    font-weight: bold;
+    color: #333;
+}
+
+.info-row {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 20px;
+    padding: 10px;
+    background: #f8f9fa;
+    border-radius: var(--border-radius-md);
+}
+
+.moves-container h3 {
+    margin-bottom: 10px;
+    font-size: 1.2rem;
+    color: #333;
+}
+
+.moves-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.move-badge {
+    background: #eee;
+    padding: 5px 10px;
+    border-radius: 15px;
+    font-size: 0.8rem;
+    text-transform: capitalize;
+    color: #555;
+}
