@@ -991,7 +991,7 @@ body {
     .pokedex-device {
         width: 140px;
         height: 210px;
-        top: 60px;
+        top: 100px; /* Pushed down to avoid button overlap */
     }
 
     .pikachu {
