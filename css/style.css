@@ -991,7 +991,7 @@ body {
     .pokedex-device {
         width: 140px;
         height: 210px;
-        top: 100px; /* Pushed down to avoid button overlap */
+        top: 125px; /* Pushed down to avoid button overlap */
     }
 
     .pikachu {
@@ -1078,3 +1078,4 @@ body {
     .charmander { width: 90px; }
     .squirtle { width: 90px; }
 }
+
