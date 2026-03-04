@@ -832,7 +832,7 @@ body {
     cursor: pointer;
 }
 
-/* Responsiveness */
+/* Responsiveness & Touch Optimization */
 @media (max-width: 900px) {
     .main-header {
         flex-direction: column;
@@ -847,17 +847,17 @@ body {
     }
 
     .main-nav ul {
-        gap: 5px;
+        gap: 8px;
     }
 
     .nav-link {
-        padding: 5px 15px;
-        font-size: 0.85rem;
+        padding: 8px 15px; /* Larger touch target */
+        font-size: 0.9rem;
     }
 
     .user-profile {
         position: absolute;
-        top: 10px;
+        top: 15px;
         right: 20px;
         margin-left: 0;
     }
@@ -865,17 +865,17 @@ body {
     .glass-card {
         flex-direction: column;
         height: auto;
-        min-height: 600px;
+        min-height: auto;
         align-items: center;
         text-align: center;
         overflow: visible;
+        padding-bottom: 300px; /* Space for visuals pushed down */
     }
 
     .hero-content {
         width: 100%;
         padding: 40px 20px 0;
         text-align: center;
-        margin-bottom: 350px; /* Space for visuals */
     }
 
     .hero-content h2 {
@@ -890,7 +890,7 @@ body {
         width: 100%;
         height: 400px;
         top: auto;
-        bottom: 0;
+        bottom: -50px;
         right: 0;
         left: 0;
     }
@@ -922,88 +922,159 @@ body {
         transform: translateX(140%) rotate(-5deg);
         bottom: -20px;
     }
+    
+    .featured-carousel {
+        overflow-x: auto; /* Enable scroll */
+        scroll-snap-type: x mandatory;
+        justify-content: flex-start;
+        padding-left: 50%; /* Center start */
+        margin-left: -50%; /* Center start adjustment */
+    }
 }
 
+/* Mobile Devices (Portrait) */
 @media (max-width: 600px) {
     .main-nav {
-        display: none; /* Hide nav on mobile for simplicity as requested 'focus on pokedex' */
+        display: none; 
     }
 
     .logo-container {
         justify-content: center;
+        margin-bottom: 0;
+    }
+    
+    .main-header h1 {
+        font-size: 2.2rem;
+    }
+    
+    .pokeball-icon {
+        width: 35px;
+        height: 35px;
     }
 
     .user-profile {
-        top: 15px;
+        top: 12px;
         right: 15px;
         width: 40px;
         height: 40px;
     }
 
     .hero-section {
-        padding: 10px;
+        padding: 10px 15px;
     }
 
     .glass-card {
-        min-height: 550px;
+        padding-bottom: 250px;
+        border-radius: 20px;
+    }
+
+    .hero-content {
+        padding-top: 30px;
     }
 
     .hero-content h2 {
-        font-size: 2rem;
+        font-size: 1.8rem;
     }
 
     .hero-content h2 span {
-        font-size: 2.5rem;
+        font-size: 2.2rem;
     }
 
     .btn-cta {
-        padding: 12px 30px;
-        font-size: 1.1rem;
+        padding: 12px 30px; /* Min touch target 44px height implied */
+        font-size: 1rem;
+        width: 100%; /* Full width button on mobile */
+        max-width: 280px;
     }
 
     /* Mobile Visuals Adjustments */
     .pokedex-device {
-        width: 160px;
-        height: 240px;
-        top: 80px;
+        width: 140px;
+        height: 210px;
+        top: 60px;
     }
 
     .pikachu {
-        width: 140px;
-        transform: translateX(-110%);
-        bottom: 20px;
+        width: 130px;
+        transform: translateX(-100%);
+        bottom: 40px;
     }
 
     .charmander {
-        width: 120px;
-        top: 20px;
+        width: 110px;
+        top: 30px;
+        transform: translateX(110%) rotate(10deg);
     }
 
     .squirtle {
-        width: 110px;
-        bottom: 20px;
+        width: 100px;
+        bottom: 30px;
+        transform: translateX(130%) rotate(-5deg);
+    }
+
+    /* Featured Carousel Mobile Optimization */
+    .featured-section {
+        padding: 10px 0 40px;
+    }
+    
+    .featured-section h3 {
+        padding-left: 20px;
+        font-size: 1.4rem;
     }
 
     .featured-carousel {
-        flex-direction: column;
-        align-items: center;
-        gap: 50px;
-        padding-top: 40px;
+        display: flex;
+        flex-direction: row; /* Horizontal scroll */
+        justify-content: flex-start;
+        gap: 15px;
+        padding: 50px 20px 30px; /* Safe padding */
+        overflow-x: auto;
+        scroll-snap-type: x mandatory;
+        -webkit-overflow-scrolling: touch;
+        margin: 0;
+        width: 100%;
     }
 
     .pokemon-card.featured {
-        width: 100%;
+        flex: 0 0 85%; /* Show part of next card */
         max-width: 280px;
+        scroll-snap-align: center;
+        margin-right: 0;
     }
 
     .carousel-nav {
-        display: none; /* Swipe would be better, but hiding arrows for clean look */
+        display: none; 
     }
     
     .deco-pokeball-left {
-        width: 150px;
-        height: 150px;
-        bottom: -30px;
-        left: -30px;
+        width: 120px;
+        height: 120px;
+        bottom: -40px;
+        left: -40px;
+        opacity: 0.6; /* Fade to not distract */
     }
+    
+    .deco-pokeball-right {
+        display: none; /* Hide secondary deco on small screens */
+    }
+}
+
+/* Small Mobile (iPhone SE/5/Fold) */
+@media (max-width: 370px) {
+    .main-header h1 {
+        font-size: 1.8rem;
+    }
+    
+    .hero-content h2 {
+        font-size: 1.5rem;
+    }
+    
+    .hero-content h2 span {
+        font-size: 1.9rem;
+    }
+    
+    .pikachu { width: 110px; }
+    .pokedex-device { width: 120px; height: 180px; }
+    .charmander { width: 90px; }
+    .squirtle { width: 90px; }
 }
